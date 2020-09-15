@@ -8,7 +8,7 @@ sudo debootstrap \
     --arch=amd64 \
     --variant=minbase \
     --components=main,multiverse,universe \
-    eoan \
+    focal \
     $HOME/ubuntu-custom/chroot
 #    --include=fish \
 
@@ -22,9 +22,9 @@ echo "ubuntu-custom" | sudo tee $HOME/ubuntu-custom/chroot/etc/hostname
 
 # Adição dos repositórios principais do Ubuntu
 cat <<EOF | sudo tee $HOME/ubuntu-custom/chroot/etc/apt/sources.list
-deb http://us.archive.ubuntu.com/ubuntu/ eoan main restricted universe multiverse
-deb http://us.archive.ubuntu.com/ubuntu/ eoan-security main restricted universe multiverse
-deb http://us.archive.ubuntu.com/ubuntu/ eoan-updates main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
 EOF
 
 # Repositórios adicionais
